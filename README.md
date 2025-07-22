@@ -59,3 +59,37 @@ Gemini AI Assistant is a sleek, fast, and dynamic AI interface built using **Nex
 ├── layout.js                  # Root layout
 ├── loading.js                 # Loading UI for initial pages
 └── page.js                    # Home page
+
+# 🚀 Next.js Project Starter Guide
+
+This is a full-stack Next.js application powered by App Router. Follow the instructions below to set up and run the project locally on **port 3000**.
+
+---
+
+## 📦 Prerequisites
+
+Make sure the following are installed:
+
+- **Node.js** (v18 or later): https://nodejs.org
+- **npm** or **yarn** (npm comes with Node.js)
+
+---
+
+## 📁 Clone the Repository
+
+```bash
+git clone https://github.com/Shakaet/CognitionX-Gemini-AI-Next-.git
+cd CognitionX-Gemini-AI-Next
+
+npm install
+# or
+yarn install
+
+API_KEY=your_api_key_here
+NEXT_PUBLIC_API_URL=https://your-api.com
+
+npm run dev
+# or
+yarn dev
+
+

@@ -130,7 +130,7 @@ export async function deleteConversation(formData) {
 
     const conversation = await conversationCollection.deleteOne(query);
     revalidatePath("/")
-    redirect("/")
+    
 
     return conversation;
   } catch (error) {

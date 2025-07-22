@@ -6,6 +6,8 @@
 import Input from "./component/Input";
 import Suggestion from "./component/Suggestion";
 
+export const revalidate = 30;
+
 export default async function Home() {
 
 

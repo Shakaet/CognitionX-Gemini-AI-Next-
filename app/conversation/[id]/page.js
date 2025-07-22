@@ -2,6 +2,7 @@ import { getSingleConversation } from '@/app/action/action'
 import Input from '@/app/component/Input'
 import React from 'react'
 
+export const revalidate = 30;
 const page =async({params}) => {
 
     let id=await params.id

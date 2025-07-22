@@ -3,6 +3,8 @@ import React from 'react';
 import { getConversation } from '../action/action';
 import Input from '../component/Input';
 
+export const revalidate = 30;
+
 
 const Page = async() => {
 

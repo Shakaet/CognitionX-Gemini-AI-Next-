@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CognitionX | Assignment 8</title>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Satoshi:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    .font-satoshi {
+      font-family: 'Satoshi', sans-serif;
+    }
+  </style>
+</head>
+
+<body class=" font-satoshi">
+  <div class="flex h-screen mx-auto bg-white max-h-screen">
+    <!-- Left Sidebar -->
+    <div class="w-64 bg-gray-900 text-white flex flex-col">
+      <!-- Header -->
+      <div class="p-4 border-b border-gray-700">
+        <div class="flex items-center space-x-2">
+          <div class="w-2 h-2 bg-white rounded-full"></div>
+          <div class="w-2 h-2 bg-white rounded-full"></div>
+          <span class="font-semibold text-sm">CognitionX</span>
+        </div>
+      </div>
+
+      <!-- Navigation Menu -->
+      <nav class="flex-1 p-4 space-y-2  overflow-y-auto">
+        <div class="space-y-1">
+          <a href="#"
+            class="flex items-center space-x-3 px-3 py-2 rounded-lg hover:bg-gray-800 transition-colors cursor-pointer">
+            <i data-lucide="message-circle" class="w-4 h-4"></i>
+            <span class="text-sm">Create Chat</span>
+          </a>
+        </div>
+
+        <!-- Conversations -->
+        <div class="pt-4 ">
+          <span class="text-gray-500 text-xs uppercase font-semibold mb-2">Conversations</span>
+          <div class="space-y-1 mt-3">
+            <a href="#"
+              class="flex items-center space-x-3 px-2 py-2 rounded-lg hover:bg-gray-800 transition-colors cursor-pointer bg-gray-700 ">
+              <span class="text-sm text-zinc-300">Learning NLP vs LLM</span>
+            </a>
+            <a href="#"
+              class="flex items-center space-x-3 px-2 py-2 rounded-lg hover:bg-gray-800 transition-colors cursor-pointer ">
+              <span class="text-sm text-zinc-300">Microservice Data Orchestration</span>
+            </a>
+            <a href="#"
+              class="flex items-center space-x-3 px-2 py-2 rounded-lg hover:bg-gray-800 transition-colors cursor-pointer ">
+              <span class="text-sm text-zinc-300">Deep Cloning Alternatives</span>
+            </a>
+            <a href="#"
+              class="flex items-center space-x-3 px-2 py-2 rounded-lg hover:bg-gray-800 transition-colors cursor-pointer ">
+              <span class="text-sm text-zinc-300">AI Database Diagram Generation</span>
+            </a>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Footer -->
+      <div class="p-4 border-t border-gray-700 mt-auto">
+        <div class="text-center space-y-2">
+          <span class="text-xs text-gray-400">Powered by</span>
+          <div class="flex items-center justify-center space-x-2">
+            <img src="./assets/logo.svg" alt="Logo" class="h-10">
+          </div>
+          <p class="text-xs text-gray-500">
+            © 2025 All rights reserved
+          </p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Main Chat Area -->
+    <div class="flex-1 flex flex-col bg-white">
+      <!-- Chat Header -->
+      <div class="px-8 py-4 border-b border-gray-200 bg-white sticky top-0 z-10">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center space-x-3">
+            <div class="w-3 h-3 bg-green-500 rounded-full"></div>
+            <h1 class="text-lg font-semibold text-gray-800">Learning NLP vs LLM</h1>
+          </div>
+          <div class="relative">
+            <button class="p-2 hover:bg-gray-100 rounded-lg transition-colors group" onclick="toggleDropdown()">
+              <i data-lucide="more-horizontal" class="w-5 h-5 text-gray-500 group-hover:text-gray-700"></i>
+            </button>
+            <!-- Dropdown Menu -->
+            <div id="conversationDropdown"
+              class="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg border border-gray-200 py-1 hidden z-20">
+              <button
+                class="w-full px-4 py-2 text-left text-sm text-gray-700 hover:bg-gray-50 flex items-center space-x-2">
+                <i data-lucide="edit" class="w-4 h-4"></i>
+                <span>Rename conversation</span>
+              </button>
+
+              <hr class="my-1 opacity-10">
+              <button
+                class="w-full px-4 py-2 text-left text-sm text-red-600 hover:bg-red-50 flex items-center space-x-2">
+                <i data-lucide="trash-2" class="w-4 h-4"></i>
+                <span>Delete conversation</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Chat Content -->
+      <div class="flex-1 flex flex-col p-8 overflow-y-auto space-y-6">
+        <!-- Human Message -->
+        <div class="flex items-start space-x-3">
+          <div
+            class="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center text-white text-sm font-semibold">
+            H
+          </div>
+          <div class="flex-1">
+            <div class="bg-gray-100 rounded-2xl px-4 py-3 max-w-3xl">
+              <p class="text-gray-800">What's the difference between machine learning and artificial intelligence?</p>
+            </div>
+            <span class="text-xs text-gray-500 mt-1 block">2:34 PM</span>
+          </div>
+        </div>
+
+        <!-- AI Response -->
+        <div class="flex items-start space-x-3">
+          <div
+            class="w-8 h-8 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center text-white text-sm font-semibold">
+            AI
+          </div>
+          <div class="flex-1">
+            <div class="bg-white border border-gray-200 rounded-2xl px-4 py-3 max-w-3xl">
+              <p class="text-gray-800 mb-3">Great question! Here's the key difference:</p>
+              <p class="text-gray-800 mb-3"><strong>Artificial Intelligence (AI)</strong> is the broader concept of
+                creating machines that can perform tasks that typically require human intelligence. It's like the
+                umbrella term.</p>
+              <p class="text-gray-800"><strong>Machine Learning (ML)</strong> is a subset of AI that focuses on
+                algorithms that can learn and improve from data without being explicitly programmed for every scenario.
+              </p>
+
+            </div>
+            <span class="text-xs text-gray-500 mt-1 block">2:35 PM</span>
+          </div>
+        </div>
+
+        <!-- Human Follow-up -->
+        <div class="flex items-start space-x-3">
+          <div
+            class="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center text-white text-sm font-semibold">
+            H
+          </div>
+          <div class="flex-1">
+            <div class="bg-gray-100 rounded-2xl px-4 py-3 max-w-3xl">
+              <p class="text-gray-800">Can you give me some practical examples of each?</p>
+            </div>
+            <span class="text-xs text-gray-500 mt-1 block">2:36 PM</span>
+          </div>
+        </div>
+
+        <!-- AI Response with Examples -->
+        <div class="flex items-start space-x-3">
+          <div
+            class="w-8 h-8 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center text-white text-sm font-semibold">
+            AI
+          </div>
+          <div class="flex-1">
+            <div class="bg-white border border-gray-200 rounded-2xl px-4 py-3 max-w-3xl">
+              <p class="text-gray-800 mb-3">Absolutely! Here are some practical examples:</p>
+
+              <div class="mb-4">
+                <h4 class="font-semibold text-gray-800 mb-2">🤖 AI Examples (broader applications):</h4>
+                <ul class="list-disc list-inside text-gray-700 space-y-1 ml-2">
+                  <li>Siri, Alexa (voice assistants)</li>
+                  <li>Chess-playing computers</li>
+                  <li>Autonomous vehicles</li>
+                  <li>Chatbots like me!</li>
+                </ul>
+              </div>
+
+              <div>
+                <h4 class="font-semibold text-gray-800 mb-2">📊 Machine Learning Examples (data-driven learning):</h4>
+                <ul class="list-disc list-inside text-gray-700 space-y-1 ml-2">
+                  <li>Netflix movie recommendations</li>
+                  <li>Email spam detection</li>
+                  <li>Credit card fraud detection</li>
+                  <li>Image recognition in photos</li>
+                </ul>
+              </div>
+            </div>
+            <span class="text-xs text-gray-500 mt-1 block">2:37 PM</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Input Area -->
+      <div class="p-6 border-t border-gray-200">
+        <div class="relative">
+          <input type="text" placeholder="Ask me Anything"
+            class="w-full p-4 pr-20 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+          <div class="absolute right-3 top-1/2 transform -translate-y-1/2 flex items-center space-x-2">
+            <i data-lucide="sparkles" class="w-5 h-5 text-purple-500"></i>
+          </div>
+        </div>
+        <div class="flex items-center justify-end mt-3">
+
+          <div class="flex items-center space-x-4">
+            <span class="text-sm text-gray-500">0/1000</span>
+            <button
+              class="bg-black hover:bg-gray-800 text-white px-4 py-2 rounded-lg flex items-center space-x-2 transition-colors cursor-pointer">
+              <span class="text-sm">Send</span>
+              <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Lucide Icons Script -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+  <script>
+    lucide.createIcons();
+
+    // Toggle dropdown menu
+    function toggleDropdown() {
+      const dropdown = document.getElementById('conversationDropdown');
+      dropdown.classList.toggle('hidden');
+    }
+
+    // Close dropdown when clicking outside
+    document.addEventListener('click', function (event) {
+      const dropdown = document.getElementById('conversationDropdown');
+      const button = event.target.closest('button');
+
+      if (!button || !button.onclick) {
+        dropdown.classList.add('hidden');
+      }
+    });
+  </script>
+</body>
+
+</html>

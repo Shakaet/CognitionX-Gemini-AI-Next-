@@ -23,7 +23,7 @@ Gemini AI Assistant is a sleek, fast, and dynamic AI interface built using **Nex
 
 ## 🌐 Live Demo
 
-👉 [View on Vercel](https://your-vercel-project-url.vercel.app/)
+👉 [View on Vercel](https://cognition-x-gemini-ai-next.vercel.app/)
 
 ---
 

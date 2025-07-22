@@ -1,6 +1,9 @@
 
-import Input from "./component/input";
 
+
+
+
+import Input from "./component/Input";
 import Suggestion from "./component/Suggestion";
 
 export default async function Home() {

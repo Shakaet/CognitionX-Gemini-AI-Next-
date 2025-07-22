@@ -1,18 +1,9 @@
 import React from 'react'
-import { handleSubmit } from '../action/action'
 
-
-
-
- 
-const Input =  () => {
-
-  
-
-
-    
+const Input = () => {
   return (
-  <form
+    <div>
+        <form
   action={handleSubmit} // route that handles the server-side POST request
   
   className="p-6 border-t border-gray-200"
@@ -43,7 +34,7 @@ const Input =  () => {
     </div>
   </div>
 </form>
-
+    </div>
   )
 }
 

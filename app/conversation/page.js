@@ -1,6 +1,8 @@
 import React from 'react';
-import Input from '../component/input';
+
 import { getConversation } from '../action/action';
+import Input from '../component/Input';
+
 
 const Page = async() => {
 
